@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { AccountService } from '../account/account.service';
 import { CartService } from '../cart/cart.service';
 import { IOrderToCreate } from '../shared/models/order';
 import { CheckoutService } from './checkout.service';
 
 @Component({
-  selector: 'app-checkout',
-  templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.scss'],
+    selector: 'app-checkout',
+    templateUrl: './checkout.component.html',
+    styleUrls: ['./checkout.component.scss'],
+    standalone: false
 })
 export class CheckoutComponent implements OnInit {
-  public checkoutForm: FormGroup;
+  public checkoutForm: UntypedFormGroup;
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private accountService: AccountService,
     private cartService: CartService,
     private checkoutService: CheckoutService

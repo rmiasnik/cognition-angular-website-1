@@ -3,9 +3,10 @@ import { ICart, ICartItem } from '../shared/models/cart';
 import { CartService } from './cart.service';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss'],
+    selector: 'app-cart',
+    templateUrl: './cart.component.html',
+    styleUrls: ['./cart.component.scss'],
+    standalone: false
 })
 export class CartComponent {
   public cart$ = this.cartServ.cart$;
