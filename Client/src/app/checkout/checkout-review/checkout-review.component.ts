@@ -4,9 +4,10 @@ import { ToastrService } from 'ngx-toastr';
 import { CartService } from '../../cart/cart.service';
 
 @Component({
-  selector: 'app-checkout-review',
-  templateUrl: './checkout-review.component.html',
-  styleUrls: ['./checkout-review.component.scss'],
+    selector: 'app-checkout-review',
+    templateUrl: './checkout-review.component.html',
+    styleUrls: ['./checkout-review.component.scss'],
+    standalone: false
 })
 export class CheckoutReviewComponent {
   @Input() appStepper!: CdkStepper;

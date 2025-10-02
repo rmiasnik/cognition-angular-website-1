@@ -3,9 +3,10 @@ import { CartService } from '../../cart/cart.service';
 import { IProduct } from '../../shared/models/product';
 
 @Component({
-  selector: 'app-product-item',
-  templateUrl: './product-item.component.html',
-  styleUrls: ['./product-item.component.scss'],
+    selector: 'app-product-item',
+    templateUrl: './product-item.component.html',
+    styleUrls: ['./product-item.component.scss'],
+    standalone: false
 })
 export class ProductItemComponent {
   @Input() product?: IProduct;

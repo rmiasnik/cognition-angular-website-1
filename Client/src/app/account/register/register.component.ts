@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {
   AsyncValidatorFn,
-  FormBuilder,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,15 +11,16 @@ import { switchMap, map } from 'rxjs/operators';
 import { AccountService } from '../account.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
+    selector: 'app-register',
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.scss'],
+    standalone: false
 })
 export class RegisterComponent {
-  registerForm: FormGroup;
+  registerForm: UntypedFormGroup;
   formErrors: string[] = [];
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private accountService: AccountService,
     private router: Router
   ) {

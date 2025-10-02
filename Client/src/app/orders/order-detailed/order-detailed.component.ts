@@ -5,9 +5,10 @@ import { IOrder } from '../../shared/models/order';
 import { OrdersService } from '../orders.service';
 
 @Component({
-  selector: 'app-order-detailed',
-  templateUrl: './order-detailed.component.html',
-  styleUrls: ['./order-detailed.component.scss'],
+    selector: 'app-order-detailed',
+    templateUrl: './order-detailed.component.html',
+    styleUrls: ['./order-detailed.component.scss'],
+    standalone: false
 })
 export class OrderDetailedComponent implements OnInit {
   @Input() order?: IOrder;

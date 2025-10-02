@@ -1,27 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AccountService } from '../account.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    standalone: false
 })
 export class LoginComponent implements OnInit {
   public returnUrl = '/shop';
-  public loginForm: FormGroup;
+  public loginForm: UntypedFormGroup;
   constructor(
     private accountService: AccountService,
     private router: Router,
     private activeRoute: ActivatedRoute
   ) {
-    this.loginForm = new FormGroup({
-      email: new FormControl('', [
+    this.loginForm = new UntypedFormGroup({
+      email: new UntypedFormControl('', [
         Validators.required,
         Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$'),
       ]),
-      password: new FormControl('', [Validators.required]),
+      password: new UntypedFormControl('', [Validators.required]),
     });
   }
 

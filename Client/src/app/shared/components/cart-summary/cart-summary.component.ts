@@ -3,9 +3,10 @@ import { CartService } from '../../../cart/cart.service';
 import { ICartItem } from '../../models/cart';
 
 @Component({
-  selector: 'app-cart-summary',
-  templateUrl: './cart-summary.component.html',
-  styleUrls: ['./cart-summary.component.scss'],
+    selector: 'app-cart-summary',
+    templateUrl: './cart-summary.component.html',
+    styleUrls: ['./cart-summary.component.scss'],
+    standalone: false
 })
 export class CartSummaryComponent {
   @Output() decrement = new EventEmitter<ICartItem>();

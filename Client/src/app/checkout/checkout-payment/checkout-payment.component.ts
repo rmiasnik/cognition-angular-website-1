@@ -6,7 +6,7 @@ import {
   OnDestroy,
   ViewChild,
 } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from '../../cart/cart.service';
@@ -17,12 +17,13 @@ import { CheckoutService } from '../checkout.service';
 declare var Stripe: any;
 
 @Component({
-  selector: 'app-checkout-payment',
-  templateUrl: './checkout-payment.component.html',
-  styleUrls: ['./checkout-payment.component.scss'],
+    selector: 'app-checkout-payment',
+    templateUrl: './checkout-payment.component.html',
+    styleUrls: ['./checkout-payment.component.scss'],
+    standalone: false
 })
 export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
-  @Input() checkoutForm!: FormGroup;
+  @Input() checkoutForm!: UntypedFormGroup;
   @ViewChild('cardNumber', { static: true }) cardNumberInput!: ElementRef;
   @ViewChild('cardExpiry', { static: true }) cardExpiryInput!: ElementRef;
   @ViewChild('cardCvc', { static: true }) cardCvcInput!: ElementRef;
